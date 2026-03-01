@@ -1,0 +1,7 @@
+{
+    "version": 2,
+    "framework": "nextjs",
+    "env": {
+        "NEXT_PUBLIC_API_URL": "REPLACE_WITH_YOUR_BACKEND_URL_ON_RENDER_OR_RAILWAY"
+    }
+}

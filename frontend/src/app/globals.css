@@ -1,0 +1,153 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap');
+
+@import "tailwindcss";
+
+:root {
+  --primary: #004643;
+  /* Cyprus - Rich Teal/Green */
+  --primary-glow: rgba(0, 70, 67, 0.4);
+  --secondary: #006b66;
+  --background: #F0EDE5;
+  /* Sand - Off-white/Beige */
+  --card-bg: rgba(255, 255, 255, 0.85);
+  --text-main: #004643;
+  --text-muted: #2f4f4f;
+  --border: rgba(0, 70, 67, 0.2);
+  --accent: #d4a373;
+  /* Warm tan accent */
+  --white: #ffffff;
+}
+
+body {
+  background-color: var(--background);
+  background-image:
+    radial-gradient(at 0% 0%, rgba(0, 70, 67, 0.08) 0px, transparent 50%),
+    radial-gradient(at 100% 0%, rgba(212, 163, 115, 0.15) 0px, transparent 50%);
+  color: var(--text-main);
+  font-family: 'Outfit', sans-serif;
+  min-height: 100vh;
+  margin: 0;
+}
+
+
+.glass-card {
+  background: var(--card-bg);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid var(--border);
+  border-radius: 1.5rem;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+}
+
+.gradient-text {
+  background: linear-gradient(135deg, #004643 0%, #006b66 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.btn-primary {
+  @apply px-6 py-3 rounded-xl font-medium transition-all duration-300 flex items-center justify-center gap-2;
+  background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+  box-shadow: 0 4px 15px var(--primary-glow);
+}
+
+.btn-primary:hover {
+  @apply transform -translate-y-0.5 opacity-90;
+  box-shadow: 0 8px 25px var(--primary-glow);
+}
+
+.tab-active {
+  @apply relative text-white font-semibold;
+}
+
+.tab-active::after {
+  content: '';
+  @apply absolute bottom-[-8px] left-0 w-full h-[3px] rounded-full;
+  background: linear-gradient(90deg, #004643, #d4a373);
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--background);
+}
+
+::-webkit-scrollbar-thumb {
+  background: #004643;
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #006b66;
+}
+
+@keyframes float {
+  0% {
+    transform: translateY(0px);
+  }
+
+  50% {
+    transform: translateY(-10px);
+  }
+
+  100% {
+    transform: translateY(0px);
+  }
+}
+
+.animate-float {
+  animation: float 6s ease-in-out infinite;
+}
+
+.glass-morphism {
+  background: rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(0, 70, 67, 0.1);
+  box-shadow: 0 8px 32px 0 rgba(0, 70, 67, 0.05);
+}
+
+.text-reveal {
+  background: linear-gradient(to right, #004643, #d4a373);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  background-size: 200% auto;
+  animation: shine 4s linear infinite;
+}
+
+@keyframes shine {
+  to {
+    background-position: 200% center;
+  }
+}
+
+.btn-wow {
+  position: relative;
+  overflow: hidden;
+  transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+  color: white;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  border-radius: 1rem;
+  cursor: pointer;
+  background: linear-gradient(90deg, #004643, #006b66, #d4a373, #004643);
+  background-size: 300% 100%;
+}
+
+.btn-wow:hover {
+  background-position: 100% 0;
+  box-shadow: 0 0 30px rgba(0, 70, 67, 0.3);
+  transform: translateY(-2px) scale(1.02);
+}
+
+.btn-wow:active {
+  transform: scale(0.98);
+}
