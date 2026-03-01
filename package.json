@@ -1,0 +1,14 @@
+{
+    "name": "autonomous-research-paper-analyzer-root",
+    "version": "1.0.0",
+    "private": true,
+    "scripts": {
+        "dev": "npm run dev --prefix frontend",
+        "build": "npm run build --prefix frontend",
+        "frontend": "npm run dev --prefix frontend",
+        "backend": "cd backend && uvicorn main:app --reload"
+    },
+    "dependencies": {
+        "next": "16.1.6"
+    }
+}
