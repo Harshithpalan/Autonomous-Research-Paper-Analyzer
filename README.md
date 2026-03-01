@@ -88,10 +88,21 @@ graph TD
     npm run dev
     ```
 
-## 📦 Deployment with Docker
+## 📦 Deployment
 
-The project is fully containerized for easy deployment.
+### **Frontend (Vercel)**
+1.  Connect your GitHub repository to [Vercel](https://vercel.com).
+2.  Set the **Root Directory** to `frontend`.
+3.  Add the environment variable `NEXT_PUBLIC_API_URL` pointing to your deployed FastAPI backend.
+4.  Vercel will automatically detect the Next.js preset and deploy.
 
+### **Backend (Render / Railway / Fly.io)**
+FastAPI requires a Python-capable host.
+1.  Connect the same repo to Render/Railway.
+2.  Set the **Build Command** to `pip install -r backend/requirements.txt`.
+3.  Set the **Start Command** to `cd backend && uvicorn main:app --host 0.0.0.0 --port $PORT`.
+
+### **Standard Docker Deployment**
 1.  Standardize your `.env` files in both directories.
 2.  Run the entire stack from the root directory:
     ```bash
