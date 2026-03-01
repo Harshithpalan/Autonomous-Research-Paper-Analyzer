@@ -8,7 +8,7 @@ An advanced, AI-powered system designed to automate the process of analyzing res
 -   **AI-Driven Semantic Analysis**: Leverages state-of-the-art LLMs (GPT-4 or Gemini Pro) via `LangChain` to provide PhD-level summarization, extraction of core contributions, and identification of research limitations.
 -   **Equation Intelligence**: Automatically detects LaTeX equations and provides simplified, natural-language explanations.
 -   **Automated Presentation Generation**: Transforms analyzed data into a high-quality, professional `.pptx` presentation summary, saving hours of manual work.
--   **Modern Research Dashboard**: A sleek, high-performance UI built with Next.js 14, featuring tabbed views for summaries, methodology, equations, and future improvements.
+-   **Cinematic Cyprus & Sand UI**: A world-class, production-ready dashboard using a luxury color palette (`#004643` & `#F0EDE5`) with cinematic motion, parallax backgrounds, and liquid interactive buttons.
 
 ## 🏗️ System Architecture
 
