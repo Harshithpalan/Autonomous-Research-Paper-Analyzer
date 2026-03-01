@@ -23,7 +23,16 @@ class ResearchAnalysis(BaseModel):
 class Analyzer:
     def __init__(self):
         # We can also use LangChain's load_dotenv if needed
-        self.llm = ChatOpenAI(model="gpt-4-turbo-preview", temperature=0)
+        self.llm = ChatOpenAI(
+            model="google/gemini-2.0-flash-001", 
+            temperature=0,
+            openai_api_key=os.getenv("OPENROUTER_API_KEY"),
+            openai_api_base="https://openrouter.ai/api/v1",
+            default_headers={
+                "HTTP-Referer": "https://localhost:3000",
+                "X-Title": "Autonomous Research Paper Analyzer"
+            }
+        )
         self.parser = JsonOutputParser(pydantic_object=ResearchAnalysis)
     
     async def analyze_paper(self, text: str):
